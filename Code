@@ -1,0 +1,146 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int n;
+    int age;
+    int amount;
+    int balance = 0;
+    int accountNumber = 0;
+    string name;
+    bool accountCreated = false;
+
+    do
+    {
+        cout << "\n\n===== BANK MENU =====";
+        cout << "\n1. CREATE ACCOUNT";
+        cout << "\n2. CREDIT";
+        cout << "\n3. CHECK BALANCE";
+        cout << "\n4. DEBIT";
+        cout << "\n5. EXIT";
+        cout << "\nEnter specified option: ";
+        cin >> n;
+
+        switch(n)
+        {
+            case 1:
+                cout << "\nENTER YOUR NAME: ";
+                cin >> name;
+
+                cout << "ENTER YOUR AGE: ";
+                cin >> age;
+
+                if(age >= 18)
+                {
+                    accountNumber =  rand();
+                    accountCreated = true;
+
+                    cout << "\nYOUR ACCOUNT IS CREATED";
+                    cout << "\nName: " << name;
+                    cout << "\nAccount Number: " << accountNumber;
+                    cout << "\nBalance: " << balance;
+                }
+                else
+                {
+                    cout << "\nYOU ARE NOT ELIGIBLE";
+                }
+                break;
+
+            case 2:
+                if(accountCreated)
+                {
+                    cout << "\nEnter Account Number: ";
+                    int acc;
+                    cin >> acc;
+
+                    if(acc == accountNumber)
+                    {
+                        cout << "ENTER AMOUNT TO CREDIT: ";
+                        cin >> amount;
+
+                        balance = balance + amount;
+
+                        cout << "AMOUNT CREDITED";
+                        cout << "\nYOUR BALANCE: " << balance;
+                    }
+                    else
+                    {
+                        cout << "INVALID ACCOUNT NUMBER";
+                    }
+                }
+                else
+                {
+                    cout << "PLEASE CREATE AN ACCOUNT FIRST";
+                }
+                break;
+
+            case 3:
+                if(accountCreated)
+                {
+                    cout << "\nEnter Account Number: ";
+                    int acc;
+                    cin >> acc;
+
+                    if(acc == accountNumber)
+                    {
+                        cout << "YOUR BALANCE: " << balance;
+                    }
+                    else
+                    {
+                        cout << "INVALID ACCOUNT NUMBER";
+                    }
+                }
+                else
+                {
+                    cout << "PLEASE CREATE AN ACCOUNT FIRST";
+                }
+                break;
+
+            case 4:
+                if(accountCreated)
+                {
+                    cout << "\nEnter Account Number: ";
+                    int acc;
+                    cin >> acc;
+
+                    if(acc == accountNumber)
+                    {
+                        cout << "ENTER AMOUNT TO DEBIT: ";
+                        cin >> amount;
+
+                        if(amount <= balance)
+                        {
+                            balance = balance - amount;
+
+                            cout << "MONEY DEBITED";
+                            cout << "\nYOUR BALANCE: " << balance;
+                        }
+                        else
+                        {
+                            cout << "INSUFFICIENT BALANCE";
+                        }
+                    }
+                    else
+                    {
+                        cout << "INVALID ACCOUNT NUMBER";
+                    }
+                }
+                else
+                {
+                    cout << "PLEASE CREATE AN ACCOUNT FIRST";
+                }
+                break;
+
+            case 5:
+                cout << "\nThank you for using our bank!";
+                break;
+
+            default:
+                cout << "\nINVALID OPTION";
+        }
+
+    } while(n != 5);
+
+    return 0;
+}
