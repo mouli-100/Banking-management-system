@@ -1,0 +1,30 @@
+💻 Sample Output
+
+===== BANK MENU =====
+1. CREATE ACCOUNT
+2. CREDIT
+3. CHECK BALANCE
+4. DEBIT
+5. EXIT
+Enter specified option: 1
+
+ENTER YOUR NAME: Mouli
+ENTER YOUR AGE: 20
+
+YOUR ACCOUNT IS CREATED
+Name: Mouli
+Account Number: 1804289383
+Balance: 0
+
+===== BANK MENU =====
+1. CREATE ACCOUNT
+2. CREDIT
+3. CHECK BALANCE
+4. DEBIT
+5. EXIT
+Enter specified option: 2
+
+Enter Account Number: 1804289383
+ENTER AMOUNT TO CREDIT: 5000
+AMOUNT CREDITED
+YOUR BALANCE: 5000
